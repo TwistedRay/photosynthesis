@@ -43,85 +43,9 @@ var path = [
 	}
 ]
 
-#var path = [
-#	{
-#		"x": 2,
-#		"y": 0,
-#		"count": 3
-#	},
-#	{
-#		"x": 1,
-#		"y": 1,
-#		"count": 1
-#	},
-#	{
-#		"x": -2,
-#		"y": 0,
-#		"count": 4
-#	},
-#	{
-#		"x": -1,
-#		"y": 1,
-#		"count": 1
-#	},
-#	{
-#		"x": 2,
-#		"y": 0,
-#		"count": 5
-#	},
-#	{
-#		"x": 1,
-#		"y": 1,
-#		"count": 1
-#	},
-#	{
-#		"x": -2,
-#		"y": 0,
-#		"count": 6
-#	},
-#	{
-#		"x": 1,
-#		"y": 1,
-#		"count": 1
-#	},
-#	{
-#		"x": 2,
-#		"y": 0,
-#		"count": 5
-#	},
-#	{
-#		"x": -1,
-#		"y": 1,
-#		"count": 1
-#	},
-#	{
-#		"x": -2,
-#		"y": 0,
-#		"count": 4
-#	},
-#	{
-#		"x": 1,
-#		"y": 1,
-#		"count": 1
-#	},
-#	{
-#		"x": 2,
-#		"y": 0,
-#		"count": 3
-#	}
-##    (2, 0, 3),
-##    (1, 1, 1), (-2, 0, 4),
-##    (-1, 1, 1), (2, 0, 5),
-##    (1, 1, 1), (-2, 0, 6),
-##    (1, 1, 1), (2, 0, 5),
-##    (-1, 1, 1), (-2, 0, 4),
-##    (1, 1, 1), (2, 0, 3),
-#]
 
 func _ready():
-#	pass
 	create_board()
-
 
 
 func get_gap(direction: int):
@@ -129,27 +53,14 @@ func get_gap(direction: int):
 
 
 func duplicate_block(x_position: float, z_position: float, count: int):
-	print(range(count))
 	for i in range(count):
-#		var x = x_direction * x_offset + get_gap(x_direction)
-#		var z = z_direction * z_offset + get_gap(z_direction)
 		var x = x_position + i * x_offset
 		var z = z_position + i * z_offset
 		var Vect3 = Vector3(x,0,z)
-		print("x : " + str(x) + " " + "z: " + str(z))
 		var newElement = Item.instance()
 		newElement.translate(Vect3)
-#		newElement.set_surface_material(0,test_material)
 		self.add_child(newElement)
-#        bpy.ops.object.duplicate_move(
-#            TRANSFORM_OT_translate={
-#                "value": (
-#                    x_direction * x_offset + get_gap(x_direction),
-#                    y_direction * y_offset + get_gap(y_direction),
-#                    0
-#                )
-#            }
-#        )
+
 
 
 func create_board():
